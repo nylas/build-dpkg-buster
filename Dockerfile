@@ -6,7 +6,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 # Installs the `dpkg-buildpackage` command
 RUN apt-get update
-RUN apt-get install build-essential debhelper -y
+RUN apt-get install build-essential debhelper devscripts -y
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
