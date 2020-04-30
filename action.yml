@@ -1,0 +1,5 @@
+name: 'Build dpkg: Debian Buster'
+description: 'Build a Debian package, using the latest version of Debian Buster'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
