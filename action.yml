@@ -1,5 +1,10 @@
 name: 'Build dpkg: Debian Buster'
 description: 'Build a Debian package, using the latest version of Debian Buster'
+inputs:
+  build-dependencies:
+    description: 'Dependencies needed to build your package'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.build-dependencies }}
