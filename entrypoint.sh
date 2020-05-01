@@ -6,7 +6,9 @@ mk-build-deps --install --tool="${install_tool}" debian/control
 # Build the package
 dpkg-buildpackage $@
 # Output the filename
-filename=`ls ../*.deb`
-echo ::set-output filename=filename::$filename
-# Move the built package into the Docker mounted volume (current directory)
-mv ../$filename .
+cd ..
+packages=`ls *.deb`
+echo ::set-output name=filename::`echo \$packages | grep -v dbgsym`
+echo ::set-output name=filename-dbgsym::`echo \$packages | grep dbgsym`
+# Move the built package into the Docker mounted workspace
+mv $packages workspace/
