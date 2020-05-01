@@ -1,6 +1,13 @@
-name: 'Build dpkg: Debian Buster'
+name: 'Build Debian package: Buster'
 description: 'Build a Debian package, using the latest version of Debian Buster'
+outputs:
+  filename:
+    description: 'Name of the built `.deb` file'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
+
+branding:
+  icon: package
+  color: gray-dark

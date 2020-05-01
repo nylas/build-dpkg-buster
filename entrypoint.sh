@@ -5,3 +5,8 @@ install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -
 mk-build-deps --install --tool="${install_tool}" debian/control
 # Build the package
 dpkg-buildpackage $@
+# Output the filename
+filename=`ls ../*.deb`
+echo ::set-output filename=filename::$filename
+# Move the built package into the Docker mounted volume (current directory)
+mv ../$filename .
