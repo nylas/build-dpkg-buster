@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 # Set the install command to be used by mk-build-deps (use --yes for non-interactive)
 install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes"
 # Install build dependencies automatically
