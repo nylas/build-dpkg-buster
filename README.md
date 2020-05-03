@@ -6,7 +6,7 @@ build a [Debian package](https://en.wikipedia.org/wiki/Deb_%28file_format%29)
 
 ## Usage
 
-```
+```yaml
 on:
   push:
     branches:
