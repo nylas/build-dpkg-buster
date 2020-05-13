@@ -1,5 +1,5 @@
 FROM debian:buster
-MAINTAINER David Baumgold <david@davidbaumgold.com>
+LABEL maintainer="David Baumgold <david@davidbaumgold.com>"
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
