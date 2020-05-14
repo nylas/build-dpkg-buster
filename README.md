@@ -39,8 +39,8 @@ This Action does the following things inside a Docker container:
    to ensure that the build dependencies defined the `debian/control` file
    are installed in the Docker image.
 2. Call [`dpkg-buildpackage`](https://manpages.debian.org/buster/dpkg-dev/dpkg-buildpackage.1.en.html)
-   with whatever arguments are passed to the `args` input in the
-   step definition.
+   with whatever arguments are passed to the
+   [`args` input](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepswithargs) in the step definition.
 3. Move the resulting `*.deb` files into the top level of your repository,
    so that other GitHub Actions steps can process them futher.
 4. Set the `filename` and `filename-dbgsym`
