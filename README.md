@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: singingwolfboy/build-dpkg-buster@master
+      - uses: singingwolfboy/build-dpkg-buster@v1
         id: build
         with:
           args: --unsigned-source --unsigned-changes
@@ -68,7 +68,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: singingwolfboy/build-dpkg-buster@master
+      - uses: singingwolfboy/build-dpkg-buster@v1
         id: build
         with:
           args: --unsigned-source --unsigned-changes
