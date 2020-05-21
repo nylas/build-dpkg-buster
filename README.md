@@ -83,4 +83,5 @@ jobs:
             cp
             ${{ steps.build.outputs.filename }}
             s3://my-bucket-name/${{ steps.build.outputs.filename }}
+            --content-type "application/vnd.debian.binary-package"
 ```
