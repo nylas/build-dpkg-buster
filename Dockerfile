@@ -4,6 +4,12 @@ LABEL maintainer="David Baumgold <david@davidbaumgold.com>"
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
+RUN echo "deb http://deb.debian.org/debian buster main contrib non-free" > /etc/apt/sources.list
+RUN echo "deb http://deb.debian.org/debian buster-updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://security.debian.org/debian-security/ buster/updates main contrib non-free" >> /etc/apt/sources.list
+
+
 # Installs the `dpkg-buildpackage` command
 RUN apt-get update
 RUN apt-get install build-essential debhelper devscripts -y
